@@ -15,13 +15,10 @@ class Profile extends Component {
       data: null
     };
 
-    //this.handleChange = this.handleChange.bind(this);
-    //this.handleSubmit = this.handleSubmit.bind(this);
-  }
+      }
 
 
-  async componentDidMount() {
-  }
+ 
 
   handleSubmit = async e => {
     e.preventDefault();
@@ -49,7 +46,7 @@ class Profile extends Component {
       <div>
         <nav className="navbar navbar-dark bg-primary mb-3">
           <div className="Container">
-            <a href="#" className="navbar-brand">Github Finder</a>
+            <a href="#home" className="navbar-brand">Github Finder</a>
           </div>
         </nav>
         <div className="container">
@@ -71,38 +68,40 @@ class Profile extends Component {
 
           </div>
           <br />
+
           {this.state.data ? (
             <div className="card card-body mb-3">
               <div className="row">
                 <div className="col-md-3">
                   <>
-                    <h1 className="lead">Avatar:</h1> <img className="img-fluid mb-2" src={this.state.data.avatar_url} />
+                    <h1 className="lead">Avatar:</h1> <img className="img-fluid mb-2" alt="avatar" src={this.state.data.avatar_url} />
 
-                    <a href={this.state.data.html_url} className="btn btn-primary btn-block">View Profile: {this.state.data.html_user} </a>
+                    <a href={this.state.data.html_url} className="btn btn-primary btn-block">View Profile </a>
                   </>
                 </div>
-                <div className = "col-md-9 ">
+                <div className="col-md-9 ">
                   <span
-                  className="badge badge-primary block">
+                    className="badge badge-primary block">
                     Public Gist:{this.state.data.public_gists}
                   </span>
                   <span
-                  className="badge badge-info block">
+                    className="badge badge-info block">
                     Public Repos:{this.state.data.public_repos}
                   </span>
                   <span
-                  className="badge badge-secondary block">
+                    className="badge badge-secondary block">
                     Followers:{this.state.data.followers}
                   </span>
                   <span
-                  className="badge badge-success block">
+                    className="badge badge-success block">
                     Following:{this.state.data.following}
                   </span>
-                  <br/><br/>
-                  <ul className= "list-group">
+                  <br /><br />
+                  <ul className="list-group">
                     <li className="list-group-item">Company: {this.state.data.company}</li>
                     <li className="list-group-item">Website/Blog: {this.state.data.blog}</li>
                     <li className="list-group-item">Location: {this.state.data.location}</li>
+                    <li className="list-group-item">Twitter Username: {this.state.data.twitter_username}</li>
                     <li className="list-group-item">Member Since: {this.state.data.created_at}</li>
                   </ul>
                 </div>
